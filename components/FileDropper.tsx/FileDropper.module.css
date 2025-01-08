@@ -1,0 +1,70 @@
+.label {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-height: 200px;
+
+  & button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0.5rem;
+    background: var(--color-panel);
+    backdrop-filter: var(--backdrop-filter-panel);
+    border: none;
+    border-radius: var(--radius-4);
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border: 1px dashed var(--slate-9);
+    padding: var(--space-5);
+    overflow: hidden;
+
+    &:hover {
+      background: var(--gray-a3);
+    }
+  }
+}
+
+.active {
+  & button {
+    border: 1px solid var(--ui-4);
+    background: var(--ui-hover);
+  }
+}
+
+.dropHovering {
+  & button {
+    background: var(--ui-3);
+  }
+}
+
+.input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  outline: 0;
+}
+
+.previews {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  opacity: 0.1;
+  filter: blur(3px) grayscale(1);
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

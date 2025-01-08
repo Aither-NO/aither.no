@@ -1,0 +1,94 @@
+@import "@radix-ui/themes/styles.css";
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--ui-1);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+:root {
+  --ui-1: var(--slate-2);
+  --ui-2: var(--slate-3);
+  --ui-1-clr: var(--sky-4);
+  --ui-2-clr: var(--sky-3);
+  --ui-3: var(--slate-5);
+  --ui-4: var(--slate-6);
+  --ui-5: var(--sky-8);
+  --ui-border-1: var(--sky-5);
+  --ui-border-2: var(--sky-7);
+  --ui-hover: var(--sky-1);
+  --light-text: color(display-p3 0.93 0.933 0.94);
+  --light-gray-text: color(display-p3 0.949 0.969 0.996 / 0.708);
+  --bg-transparent: var(--white-a9);
+}
+
+.radix-themes {
+  --cursor-button: pointer;
+  --cursor-checkbox: pointer;
+  --cursor-disabled: default;
+  --cursor-link: pointer;
+  --cursor-menu-item: pointer;
+  --cursor-radio: pointer;
+  --cursor-slider-thumb: grab;
+  --cursor-slider-thumb-active: grabbing;
+  --cursor-switch: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+.dark {
+  & .leaflet-layer,
+  & .leaflet-control-zoom-in,
+  & .leaflet-control-zoom-out,
+  & .leaflet-control-attribution {
+    filter: invert(100%) hue-rotate(180deg) brightness(95%)
+      contrast(90%);
+  }
+  --bg-transparent: var(--black-a10);
+}
+
+.DialogOverlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  inset: 0px;
+}
+
+.DialogContent {
+  background-color: var(--ui-1);
+  border-radius: var(--radius-4);
+  box-shadow: rgba(14, 18, 22, 0.35) 0px 10px 38px -10px,
+    rgba(14, 18, 22, 0.2) 0px 10px 20px -15px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: var(--space-3);
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+@keyframes slightFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(2px);
+  }
+}
+
+#mainlogo {
+  animation: slightFadeInUp 0.5s ease-out;
+  animation-fill-mode: forwards;
+}

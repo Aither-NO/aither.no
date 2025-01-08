@@ -1,0 +1,20 @@
+.partner {
+  transition: transform 0.3s ease-out;
+  user-select: none;
+  max-width: 120px;
+  min-width: 90px;
+  & > img {
+    filter: grayscale(100%);
+  }
+  &:hover {
+    & > img {
+      filter: grayscale(0%);
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .partner > img {
+    filter: grayscale(50%);
+  }
+}

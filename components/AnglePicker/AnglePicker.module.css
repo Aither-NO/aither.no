@@ -1,0 +1,40 @@
+.container {
+  background: var(--color-surface);
+  --size: 2rem;
+  --line-thickness: 2px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  position: relative;
+  cursor: grab;
+  border: 1px solid var(--slate-a7);
+  flex-shrink: 0;
+
+  &:focus {
+    outline: 1px solid var(--accent-indicator);
+
+    & > svg {
+      color: var(--accent-indicator);
+    }
+  }
+
+  & > svg {
+    position: absolute;
+    --iconSize: calc(var(--size) * 0.6);
+    width: var(--iconSize);
+    height: var(--iconSize);
+    top: calc(50% - var(--iconSize) / 2);
+    left: calc(50% - var(--iconSize) / 2);
+    transform-origin: 50% 100%;
+    transform-origin: center center;
+    rotate: var(--angle);
+    pointer-events: none;
+    transition: rotate 0.1s ease-out;
+  }
+
+  & input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+}

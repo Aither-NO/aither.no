@@ -1,0 +1,17 @@
+.animate {
+  & > * {
+    animation: fadeIn 0.25s ease-in-out;
+    animation-delay: calc(0.1s * var(--i));
+    animation-fill-mode: both;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,54 @@
+.preview {
+  padding: var(--space-1);
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-3);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      315deg,
+      var(--sky-10) 0%,
+      var(--ui-2) 50%,
+      var(--ui-2) 100%
+    );
+    z-index: -1;
+    transform: scale(4);
+    animation: rotateGradient 3s linear infinite;
+  }
+
+  & img {
+    margin: 0;
+    animation: imgLoading 3s linear infinite;
+  }
+}
+
+@keyframes rotateGradient {
+  0% {
+    rotate: 0;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+
+@keyframes imgLoading {
+  0%,
+  48%,
+  54%,
+  100% {
+    filter: blur(0);
+  }
+  51% {
+    filter: blur(1px);
+  }
+  20%,
+  70% {
+    filter: grayscale(0.2);
+  }
+}
