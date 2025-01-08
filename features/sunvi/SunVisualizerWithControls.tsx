@@ -11,6 +11,7 @@ import {
 } from "@radix-ui/themes";
 import cn from "classnames";
 import { ReactNode, useRef } from "react";
+import config from "../../next.config.mjs";
 import styles from "./SunVisualizerWithControls.module.css";
 import { useSunVisForm } from "./context";
 
@@ -57,7 +58,7 @@ export function SunVisualizerWithControls(props: {
       <Flex direction={"column"} gap="3">
         <div className={styles.videoContainer}>
           <video
-            src="/vid/fake-demo-2.mp4"
+            src={config.basePath + "/vid/fake-demo-2.mp4"}
             ref={ref}
             style={{
               width: "100%",

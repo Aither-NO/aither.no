@@ -17,8 +17,8 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import config from "../../next.config.mjs";
 import { DarkmodeToggle } from "../DarkmodeToggle/DarkmodeToggle";
-
 const COLLAPSE_WIDTH = 980;
 
 export function NavigationBar(props: {
@@ -85,8 +85,8 @@ function LogoImage() {
     return <div style={{ width: "150px", height: "47px" }} />;
   const src =
     derivedTheme === "dark"
-      ? "/img/logo-light.png"
-      : "/img/logo-dark.png";
+      ? config.basePath + "/img/logo-light.png"
+      : config.basePath + "/img/logo-dark.png";
 
   return (
     <Image

@@ -7,6 +7,7 @@ import { GearIcon } from "@radix-ui/react-icons";
 import { Container, Flex, Heading } from "@radix-ui/themes";
 import gsap from "gsap";
 import { useRef } from "react";
+import config from "../../next.config.mjs";
 
 export const ScrollVideoSection = clientOnly(() => {
   const triggerRef = useRef<HTMLDivElement>(null);
@@ -144,7 +145,7 @@ export const ScrollVideoSection = clientOnly(() => {
   return (
     <ScrollVideo
       triggerRef={triggerRef}
-      src="/vid/fake-demo-2.mp4"
+      src={config.basePath + "/vid/fake-demo-2.mp4"}
       duration={2.5}
       offset="50%"
     >

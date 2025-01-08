@@ -21,12 +21,13 @@ import {
   TextField,
 } from "@radix-ui/themes";
 import Link from "next/link";
+import config from "../next.config.mjs";
 
 export default function Home() {
   return (
     <Flex direction="column">
       <BlurredBackground
-        src="/img/house-garden-2.png"
+        src={config.basePath + "/img/house-garden-2.png"}
         fullHeight
         blur={10}
         shade="var(--bg-transparent)"
