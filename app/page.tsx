@@ -101,7 +101,10 @@ export default function Home() {
                     </Heading>
                   </Flex>
                   <FormItem label="Your email">
+                  <form action="https://formspree.io/f/mannayqn" method="POST">
                     <TextField.Root
+                      type="email" 
+                      name="email"
                       id="subscribe"
                       color="green"
                       size="3"
@@ -109,6 +112,7 @@ export default function Home() {
                       <TextField.Slot />
                       <TextField.Slot>
                         <Button
+                          type="submit"
                           size="3"
                           color="green"
                           variant="ghost"
@@ -122,6 +126,8 @@ export default function Home() {
                         </Button>
                       </TextField.Slot>
                     </TextField.Root>
+                    <input type="hidden" name="message" value="I want to subscribe to the mailing list for updates!"/>
+                    </form>
                   </FormItem>
                 </Flex>
               </Flex>
