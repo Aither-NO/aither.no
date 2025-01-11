@@ -23,7 +23,7 @@ export const ScrollVideoSection = clientOnly(() => {
         trigger: triggerRef.current,
         start: "top bottom",
         end: "50% bottom",
-        scrub: 2,
+        scrub: 1.9,
       },
     });
     const cardTl = gsap.timeline({
@@ -31,7 +31,7 @@ export const ScrollVideoSection = clientOnly(() => {
         trigger: triggerRef.current,
         start: "top bottom",
         end: "50% bottom",
-        scrub: 2,
+        scrub: 1.9,
       },
     });
     const pictureSnapTl = gsap.timeline({
@@ -39,7 +39,7 @@ export const ScrollVideoSection = clientOnly(() => {
         trigger: triggerRef.current,
         start: "53% bottom",
         end: "54% bottom",
-        scrub: 2,
+        scrub: 1.9,
       },
     });
     const secondCardTl = gsap.timeline({
@@ -47,7 +47,7 @@ export const ScrollVideoSection = clientOnly(() => {
         trigger: triggerRef.current,
         start: "60% bottom",
         end: "bottom bottom",
-        scrub: 2,
+        scrub: 1.9,
       },
     });
     const gearTl = gsap.timeline({
@@ -55,7 +55,7 @@ export const ScrollVideoSection = clientOnly(() => {
         trigger: triggerRef.current,
         start: "60% bottom",
         end: "bottom bottom",
-        scrub: 2,
+        scrub: 1.9,
       },
     });
     headingTl
