@@ -6,6 +6,8 @@ import React, { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const defaultOffset = 0.9;
+
 export function ScrollVideo(props: {
   src: string;
   /** amount of pages worth of scrolling */
@@ -25,6 +27,14 @@ export function ScrollVideo(props: {
 
   useGSAP(() => {
     if (vidDuration === 0) return;
+    const videoEl = ref.current;
+    if (videoEl) {
+      videoEl.addEventListener("loadeddata", () => {
+        videoEl.removeAttribute("autoplay");
+        videoEl.currentTime = props.offsetTime ?? defaultOffset;
+        videoEl.pause();
+      });
+    }
     gsap
       .timeline({
         defaults: { duration: 1 },
@@ -38,7 +48,7 @@ export function ScrollVideo(props: {
       .fromTo(
         ref.current,
         {
-          currentTime: props.offsetTime ?? 0.9,
+          currentTime: props.offsetTime ?? defaultOffset,
         },
         {
           currentTime: vidDuration,
@@ -89,6 +99,7 @@ export function ScrollVideo(props: {
             width: "100%",
             margin: "auto",
           }}
+          autoPlay
         />
         <div
           style={{
