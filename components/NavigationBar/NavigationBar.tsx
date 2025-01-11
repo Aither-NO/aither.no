@@ -16,6 +16,7 @@ import {
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import config from "../../next.config.mjs";
 import { DarkmodeToggle } from "../DarkmodeToggle/DarkmodeToggle";
@@ -28,7 +29,11 @@ export function NavigationBar(props: {
     `(max-width: ${COLLAPSE_WIDTH}px)`
   );
   const { theme, setTheme } = useTheme();
+  const pathname = usePathname();
   const isDark = theme === "dark";
+  if (pathname === "/finn-demo") {
+    return null;
+  }
   return (
     <Flex
       style={{

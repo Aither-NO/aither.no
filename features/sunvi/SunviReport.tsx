@@ -32,10 +32,15 @@ import { AiSuggestionList } from "./AiSuggestionList";
 import { useSunVisForm } from "./context";
 import { SunVisualizerWithControls } from "./SunVisualizerWithControls";
 
-export function SunviReport(props: { id: string }) {
+export function SunviReport(props: {
+  id: string;
+  defaultExpanded?: boolean;
+}) {
   const isClient = useIsClient();
   const isSmallScreen = useMediaQuery("(max-width: 1025px)");
-  const [viewExpanded, setViewExpanded] = useState(false);
+  const [viewExpanded, setViewExpanded] = useState(
+    props.defaultExpanded ?? false
+  );
   const [ref, size] = useElementSize<HTMLDivElement>();
   const isHorizontalView = !isSmallScreen && !viewExpanded;
 
