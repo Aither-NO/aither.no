@@ -45,7 +45,7 @@ export default function FinnDemo() {
             ".jpg"
           }
           alt="Demo bg"
-          style={{ height: "100%", margin: "0 auto" }}
+          style={{ margin: "0 auto" }}
         />
 
         <Dialog.Root>
