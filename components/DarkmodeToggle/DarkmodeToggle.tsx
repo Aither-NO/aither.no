@@ -15,7 +15,7 @@ export function DarkmodeToggle({
 }) {
   const [mounted, setMounted] = useState(false);
   const { theme, forcedTheme, systemTheme, setTheme } = useTheme();
-  const derivedTheme = forcedTheme ?? (theme === "system" ? systemTheme : theme)
+  const derivedTheme = forcedTheme ?? (theme === "system" ? systemTheme : theme);
   const isDark = derivedTheme === "dark";
 
   useMount(() => setMounted(true));
