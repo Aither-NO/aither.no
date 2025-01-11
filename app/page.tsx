@@ -108,6 +108,7 @@ export default function Home() {
                       id="subscribe"
                       color="green"
                       size="3"
+                      required
                     >
                       <TextField.Slot />
                       <TextField.Slot>
