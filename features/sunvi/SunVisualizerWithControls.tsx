@@ -18,7 +18,8 @@ import { useSunVisForm } from "./context";
 
 export function SunVisualizerWithControls(props: {
   viewExpanded: boolean;
-  setViewExpanded: (expanded: boolean) => void;
+  setViewExpanded?: (expanded: boolean) => void;
+  hideTopControls?: boolean;
   containerRef?: React.RefObject<HTMLDivElement>;
 }) {
   const form = useSunVisForm();
@@ -68,50 +69,58 @@ export function SunVisualizerWithControls(props: {
             autoPlay={iOS()}
             playsInline
           />
-          <div
-            style={{
-              position: "absolute",
-              top: -1,
-              left: -1,
-              right: -1,
-            }}
-          >
-            <Card
-              variant="surface"
-              size="1"
-              className={cn(styles.controls, styles.top)}
+          {!props.hideTopControls && (
+            <div
+              style={{
+                position: "absolute",
+                top: -1,
+                left: -1,
+                right: -1,
+              }}
             >
-              <Flex align="center" gap="2">
-                {/* <AnglePicker
+              <Card
+                variant="surface"
+                size="1"
+                className={cn(styles.controls, styles.top)}
+              >
+                <Flex align="center" gap="2">
+                  {/* <AnglePicker
                   ticks={12 / 360}
                   size="2rem"
                   angle={angle ?? 0}
                   onChange={(v) => form.setValue("angle", v)}
                 /> */}
-                <MonthSelect
-                  value={month}
-                  onChange={(v) => form.setValue("month", v)}
-                />
-                <Tooltip
-                  content={
-                    props.viewExpanded ? "Collapse" : "Expand"
-                  }
-                >
-                  <Button
-                    size="3"
-                    style={{ marginInline: "auto" }}
-                    variant="ghost"
-                    color="gray"
-                    onClick={() => {
-                      props.setViewExpanded(!props.viewExpanded);
-                    }}
-                  >
-                    <ColumnSpacingIcon />
-                  </Button>
-                </Tooltip>
-              </Flex>
-            </Card>
-          </div>
+                  <MonthSelect
+                    value={month}
+                    onChange={(v) => form.setValue("month", v)}
+                  />
+                  {props.setViewExpanded && (
+                    <Tooltip
+                      content={
+                        props.viewExpanded
+                          ? "Collapse"
+                          : "Expand"
+                      }
+                    >
+                      <Button
+                        size="3"
+                        style={{ marginInline: "auto" }}
+                        variant="ghost"
+                        color="gray"
+                        onClick={() => {
+                          props.setViewExpanded!(
+                            !props.viewExpanded
+                          );
+                        }}
+                      >
+                        <ColumnSpacingIcon />
+                      </Button>
+                    </Tooltip>
+                  )}
+                </Flex>
+              </Card>
+            </div>
+          )}
           <TimeSlider
             style={{
               position: "absolute",

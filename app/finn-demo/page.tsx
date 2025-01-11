@@ -90,6 +90,7 @@ export default function FinnDemo() {
                 <SunviReport
                   id="Baklengsveien 1"
                   defaultExpanded
+                  hideTopControls
                 />
               </SunviFormProvider>
             </div>

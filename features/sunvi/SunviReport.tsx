@@ -35,6 +35,7 @@ import { SunVisualizerWithControls } from "./SunVisualizerWithControls";
 export function SunviReport(props: {
   id: string;
   defaultExpanded?: boolean;
+  hideTopControls?: boolean;
 }) {
   const isClient = useIsClient();
   const isSmallScreen = useMediaQuery("(max-width: 1025px)");
@@ -62,6 +63,7 @@ export function SunviReport(props: {
           viewExpanded={viewExpanded}
           setViewExpanded={setViewExpanded}
           containerRef={ref}
+          hideTopControls={props.hideTopControls}
         />
         <ScrollArea
           style={
