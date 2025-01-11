@@ -38,7 +38,7 @@ export function ScrollVideo(props: {
       .fromTo(
         ref.current,
         {
-          currentTime: props.offsetTime ?? 0,
+          currentTime: props.offsetTime ?? 0.9,
         },
         {
           currentTime: vidDuration,
