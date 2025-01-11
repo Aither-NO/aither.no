@@ -84,6 +84,7 @@ export function ScrollVideo(props: {
             // and the duration is available before the scroll trigger is set up
             setVideoDuration(ref.current?.duration || 1);
           }}
+          playsInline
           style={{
             width: "100%",
             margin: "auto",
