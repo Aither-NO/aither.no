@@ -28,7 +28,7 @@ export function ScrollVideo(props: {
   useGSAP(() => {
     if (vidDuration === 0) return;
     const videoEl = ref.current;
-    if (videoEl) {
+    if (videoEl && !iOS()) {
       videoEl.addEventListener("loadeddata", () => {
         videoEl.removeAttribute("autoplay");
         videoEl.currentTime = props.offsetTime ?? defaultOffset;
@@ -147,4 +147,20 @@ function useEnsureBlobbing(
     // ref is not a dependency because it is a ref
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [src]);
+}
+
+function iOS() {
+  return (
+    [
+      "iPad Simulator",
+      "iPhone Simulator",
+      "iPod Simulator",
+      "iPad",
+      "iPhone",
+      "iPod",
+    ].includes(navigator.platform) ||
+    // iPad on iOS 13 detection
+    (navigator.userAgent.includes("Mac") &&
+      "ontouchend" in document)
+  );
 }
