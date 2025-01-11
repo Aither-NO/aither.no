@@ -1,4 +1,5 @@
 import { useMount } from "@/hooks/useMount";
+import { iOS } from "@/utils/client/platform";
 import { ColumnSpacingIcon } from "@radix-ui/react-icons";
 import {
   Button,
@@ -64,6 +65,8 @@ export function SunVisualizerWithControls(props: {
               width: "100%",
               borderRadius: "var(--radius-4)",
             }}
+            autoPlay={iOS()}
+            playsInline
           />
           <div
             style={{

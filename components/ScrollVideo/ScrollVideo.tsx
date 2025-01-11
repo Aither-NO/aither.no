@@ -1,4 +1,5 @@
 "use client";
+import { iOS } from "@/utils/client/platform";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -147,20 +148,4 @@ function useEnsureBlobbing(
     // ref is not a dependency because it is a ref
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [src]);
-}
-
-function iOS() {
-  return (
-    [
-      "iPad Simulator",
-      "iPhone Simulator",
-      "iPod Simulator",
-      "iPad",
-      "iPhone",
-      "iPod",
-    ].includes(navigator.platform) ||
-    // iPad on iOS 13 detection
-    (navigator.userAgent.includes("Mac") &&
-      "ontouchend" in document)
-  );
 }
