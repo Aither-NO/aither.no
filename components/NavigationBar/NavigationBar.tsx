@@ -82,7 +82,7 @@ export function NavigationBar(props: {
 function LogoImage() {
   const { forcedTheme, theme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const derivedTheme = forcedTheme ?? theme ?? systemTheme;
+  const derivedTheme = forcedTheme ?? (theme === "system" ? systemTheme : theme)
 
   useMount(() => setMounted(true));
 
