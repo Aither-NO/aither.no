@@ -23,29 +23,24 @@ export function PartnersCard() {
         wrap="wrap"
       >
         <PartnerImgLink
-          href="https://agderxr.no/"
-          alt="Agder XR"
-          src="https://cdn.sanity.io/images/2vqjviqb/content/89aaad7df9560b48e063bc7cc2038e64a3b818cb-600x130.png?w=300"
-        />
-        <PartnerImgLink
-          href="https://www.lindesnes.kommune.no"
-          alt="Lindesnes Kommune"
-          src="https://cdn.sanity.io/images/2vqjviqb/content/990f16a54c63777d807b341bd94eaf5b4e24b437-3426x1910.jpg?w=300"
-        />
-        <PartnerImgLink
-          href="https://innoventussor.no"
-          alt="Innoventus Sør"
-          src="https://cdn.sanity.io/images/2vqjviqb/content/0b2ebaa3858eae6c924390b827641e5179962600-478x156.png?w=300"
-        />
-        <PartnerImgLink
-          href="https://www.forskningsradet.no/"
-          alt="Forskningsrådet"
-          src="https://cdn.sanity.io/images/2vqjviqb/content/d73885d8a695f901497e0937b39dde0c4f923241-422x83.png?w=300"
+          href="https://european-digital-innovation-hubs.ec.europa.eu/home"
+          alt="EDIH - European Digital Innovation Hubs Network"
+          src="https://i.postimg.cc/YSVbF18x/EDIH-logo.png"
         />
         <PartnerImgLink
           href="https://www.norceresearch.no"
           alt="Norce Research"
           src="https://cdn.sanity.io/images/2vqjviqb/content/edfe001e7e4999489064e7194ece14e66c19b43c-911x265.jpg?w=300"
+        />
+        <PartnerImgLink
+          href="https://www.innovasjonnorge.no/"
+          alt="Innovasjon Norge"
+          src="https://i.postimg.cc/dtmHfZtq/IN-logo.png"
+        />
+        <PartnerImgLink
+          href="https://www.lindesnes.kommune.no"
+          alt="Lindesnes Kommune"
+          src="https://cdn.sanity.io/images/2vqjviqb/content/990f16a54c63777d807b341bd94eaf5b4e24b437-3426x1910.jpg?w=300"
         />
       </Flex>
     </Card>
