@@ -102,7 +102,7 @@ export const ScrollVideoSection = clientOnly(() => {
       });
     pictureSnapTl
       .to(pictureRef.current, {
-        opacity: 0.7,
+        opacity: 0.2,
         duration: 0.5,
       })
       .to(pictureRef.current, {
