@@ -46,7 +46,7 @@ export function NavigationBar(props: {
       p="5"
       align="center"
     >
-      <Link href="/" style={{ flexShrink: 0 }}>
+      <Link href="/" style={{ flexShrink: 1 }}>
         <LogoImage />
       </Link>
       <Flex gap="6" align="center">
@@ -100,6 +100,12 @@ function LogoImage() {
       src={src}
       alt="Aither logo"
       id="mainlogo"
+      style={{
+        width: "100%",
+        height: "auto",
+        maxWidth: "150px",
+        minWidth: "50px",
+      }}
     />
   );
 }
