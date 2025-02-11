@@ -79,7 +79,7 @@ export default function Home() {
           <Flex direction="column" gap="6">
             <Card
               size="4"
-              style={{ maxWidth: 900, margin: "0 auto" }}
+              style={{ maxWidth: "100%", margin: "0 auto" }}
             >
               <Flex gap="5">
                 <BellIcon
