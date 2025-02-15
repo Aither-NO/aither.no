@@ -9,6 +9,15 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  async redirects() {
+    return [
+      {
+        source: "/Order/:path*",
+        destination: "https://r1137465.website.cgtul6dky.service.one/Order/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
