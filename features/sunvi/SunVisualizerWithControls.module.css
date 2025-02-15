@@ -2,7 +2,6 @@
   position: relative;
   & video {
     transition: all 0.3s;
-    transform: scale(1.01);
   }
 
   &:hover,
@@ -12,20 +11,7 @@
     }
     & .controls {
       opacity: 1;
-      transform: translate(0px, 0px);
+      transform: translate(0px, 50px);
     }
   }
-}
-
-.controls {
-  opacity: 0;
-  transition: all 0.15s;
-}
-
-.top {
-  transform: translateY(-10%) scale(0.99);
-}
-
-.bottom {
-  transform: translateY(10%) scale(0.99);
 }

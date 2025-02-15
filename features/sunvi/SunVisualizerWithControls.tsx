@@ -53,11 +53,45 @@ export function SunVisualizerWithControls(props: {
         maxWidth: "100%",
         flex: 2,
         height: "max-content",
+        width: "100%",
+        margin: 0,
+        padding: 0,
       }}
       size="1"
       ref={props.containerRef}
     >
-      <Flex direction={"column"} gap="3">
+      <Flex direction={"column"} gap="0">
+        {!props.hideTopControls && (
+          <Card variant="surface" size="1" className={cn()}>
+            <Flex align="center" gap="2">
+              <MonthSelect
+                value={month}
+                onChange={(v) => form.setValue("month", v)}
+              />
+              {props.setViewExpanded && (
+                <Tooltip
+                  content={
+                    props.viewExpanded ? "Collapse" : "Expand"
+                  }
+                >
+                  <Button
+                    size="3"
+                    style={{ marginInline: "auto" }}
+                    variant="ghost"
+                    color="gray"
+                    onClick={() => {
+                      props.setViewExpanded!(
+                        !props.viewExpanded
+                      );
+                    }}
+                  >
+                    <ColumnSpacingIcon />
+                  </Button>
+                </Tooltip>
+              )}
+            </Flex>
+          </Card>
+        )}
         <div className={styles.videoContainer}>
           <video
             src={config.basePath + "/vid/fake-demo-2.mp4"}
@@ -69,71 +103,13 @@ export function SunVisualizerWithControls(props: {
             autoPlay={iOS()}
             playsInline
           />
-          {!props.hideTopControls && (
-            <div
-              style={{
-                position: "absolute",
-                top: -1,
-                left: -1,
-                right: -1,
-              }}
-            >
-              <Card
-                variant="surface"
-                size="1"
-                className={cn(styles.controls, styles.top)}
-              >
-                <Flex align="center" gap="2">
-                  {/* <AnglePicker
-                  ticks={12 / 360}
-                  size="2rem"
-                  angle={angle ?? 0}
-                  onChange={(v) => form.setValue("angle", v)}
-                /> */}
-                  <MonthSelect
-                    value={month}
-                    onChange={(v) => form.setValue("month", v)}
-                  />
-                  {props.setViewExpanded && (
-                    <Tooltip
-                      content={
-                        props.viewExpanded
-                          ? "Collapse"
-                          : "Expand"
-                      }
-                    >
-                      <Button
-                        size="3"
-                        style={{ marginInline: "auto" }}
-                        variant="ghost"
-                        color="gray"
-                        onClick={() => {
-                          props.setViewExpanded!(
-                            !props.viewExpanded
-                          );
-                        }}
-                      >
-                        <ColumnSpacingIcon />
-                      </Button>
-                    </Tooltip>
-                  )}
-                </Flex>
-              </Card>
-            </div>
-          )}
-          <TimeSlider
-            style={{
-              position: "absolute",
-              bottom: 0,
-              left: -1,
-              right: -1,
-            }}
-            videoRef={ref}
-            value={time}
-            onChange={(v) => form.setValue("time", v)}
-            className={cn(styles.controls, styles.bottom)}
-          />
         </div>
+        <TimeSlider
+          videoRef={ref}
+          value={time}
+          onChange={(v) => form.setValue("time", v)}
+          className={cn()}
+        />
       </Flex>
     </Card>
   );

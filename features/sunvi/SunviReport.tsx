@@ -4,7 +4,6 @@ import { useElementSize } from "@/hooks/useElementSize";
 import { useIsClient } from "@/hooks/useIsClient";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { angleToDirection } from "@/utils/client/3d";
-import { capitalizeFirstLetter } from "@/utils/client/text";
 import {
   ArrowUpIcon,
   CalendarIcon,
@@ -15,7 +14,6 @@ import {
   TimerIcon,
 } from "@radix-ui/react-icons";
 import {
-  Badge,
   Button,
   Code,
   DataList,
@@ -50,7 +48,7 @@ export function SunviReport(props: {
   return (
     <Flex direction={"column"} gap="5">
       <Heading size="5">
-        Sun Report: <Text color="sky">{props.id}</Text>
+        Sol rapport for <Text color="sky">{props.id}</Text>
       </Heading>
       <Flex
         direction={{
@@ -99,7 +97,7 @@ function AttributesList() {
   return (
     <>
       <DataList.Root size="3" orientation="vertical">
-        <DataList.Item>
+        {/* <DataList.Item>
           <DataList.Label>Rating</DataList.Label>
           <DataList.Value>
             <Badge color="green">A2</Badge>
@@ -108,7 +106,7 @@ function AttributesList() {
         <DataList.Item>
           <DataList.Label>
             <Flex align="center" gap="2">
-              Daily sun exposure
+              Daglig sollys
               <SunIcon />
             </Flex>
           </DataList.Label>
@@ -117,51 +115,53 @@ function AttributesList() {
               <SunChart />
             </div>
           </DataList.Value>
-        </DataList.Item>
+        </DataList.Item> */}
 
-        <DataList.Item>
-          <DataList.Label>Place</DataList.Label>
-          <DataList.Value style={{ width: "100%" }}>
-            <Flex align="center" gap="2">
-              <Tooltip content={`${angle}°`}>
-                <Flex align="center" gap="2">
-                  <ArrowUpIcon
-                    style={{
-                      transformOrigin: "center center",
-                      rotate: `${angle}deg`,
-                    }}
-                  />
-                  {face}
-                </Flex>
-              </Tooltip>
-              <SewingPinFilledIcon />
-              <Code color="gray">
-                {location?.lat}, {location?.lon}
-              </Code>
-              <Button
-                asChild
-                variant="soft"
-                color="gray"
-                size="1"
-              >
-                <Link
-                  href={`https://www.google.com/maps/place/${location?.lat},${location?.lon}`}
-                  target="_blank"
-                  rel="noreferrer noopener"
+        {location ? (
+          <DataList.Item>
+            <DataList.Label>Plass</DataList.Label>
+            <DataList.Value style={{ width: "100%" }}>
+              <Flex align="center" gap="2">
+                <Tooltip content={`${angle}°`}>
+                  <Flex align="center" gap="2">
+                    <ArrowUpIcon
+                      style={{
+                        transformOrigin: "center center",
+                        rotate: `${angle}deg`,
+                      }}
+                    />
+                    {face}
+                  </Flex>
+                </Tooltip>
+                <SewingPinFilledIcon />
+                <Code color="gray">
+                  {location?.lat}, {location?.lon}
+                </Code>
+                <Button
+                  asChild
+                  variant="soft"
+                  color="gray"
+                  size="1"
                 >
-                  <ExternalLinkIcon />
-                </Link>
-              </Button>
-            </Flex>
-          </DataList.Value>
-        </DataList.Item>
+                  <Link
+                    href={`https://www.google.com/maps/place/${location?.lat},${location?.lon}`}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <ExternalLinkIcon />
+                  </Link>
+                </Button>
+              </Flex>
+            </DataList.Value>
+          </DataList.Item>
+        ) : null}
         <DataList.Item>
-          <DataList.Label>Time</DataList.Label>
+          <DataList.Label>Tid</DataList.Label>
           <DataList.Value>
             <Flex align="center" gap="2">
               <CalendarIcon />
-              {capitalizeFirstLetter(month ?? "june")}{" "}
-              <TimerIcon />
+              {/* {capitalizeFirstLetter(month ?? "juni")}{" "} */}
+              22 Juni <TimerIcon />
               <Code color="gray">
                 {hours.toString().padStart(2, "0")}:
                 {minutes.toString().padStart(2, "0")}
@@ -172,22 +172,36 @@ function AttributesList() {
         <DataList.Item>
           <DataList.Label>
             <Flex align="center" gap="2">
-              AI Summary <MagicWandIcon />
+              Daglig sollys
+              <SunIcon />
             </Flex>
           </DataList.Label>
           <DataList.Value>
-            <Text>
-              This property has great overall sun exposure -
-              except for the months of April and May. Look into
-              planting trees that provide shade to reduce sun
-              exposure over the months of July and August.
-            </Text>
+            <div style={{ height: 70, width: "100%" }}>
+              <SunChart />
+            </div>
           </DataList.Value>
         </DataList.Item>
         <DataList.Item>
           <DataList.Label>
             <Flex align="center" gap="2">
-              AI Suggestions <MagicWandIcon />
+              AI oppsummering <MagicWandIcon />
+            </Flex>
+          </DataList.Label>
+          <DataList.Value>
+            Gjennomsnittlig antall soltimer per dag er 11 timer
+            og 27 minutter, med den tidligste soloppgangen
+            klokken 05:17 og den seneste solnedgangen klokken
+            22:20. Terrenget blokkerer i gjennomsnitt 27 minutter
+            med kveldssol hver dag, og skydekke utgjør 67 % av
+            året. Med solcellepanel kan man potensielt generere
+            6900 kWh årlig.
+          </DataList.Value>
+        </DataList.Item>
+        <DataList.Item>
+          <DataList.Label>
+            <Flex align="center" gap="2">
+              Informasjon <MagicWandIcon />
             </Flex>
           </DataList.Label>
           <DataList.Value>

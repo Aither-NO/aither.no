@@ -1,6 +1,7 @@
-import { CalloutList } from "@/components/CalloutList/CalloutList";
-
-type SuggestionType = "info" | "warning";
+import {
+  CalloutList,
+  SuggestionType,
+} from "@/components/CalloutList/CalloutList";
 
 const mockData: Array<{
   type: SuggestionType;
@@ -8,15 +9,27 @@ const mockData: Array<{
 }> = [
   {
     type: "info",
-    text: "Great summer house location.",
+    text: "11:27 soltimer i gjennomsnitt pr dag",
   },
   {
     type: "info",
-    text: "Garden plants that require full sun will thrive.",
+    text: "Tidligste soloppgang: 05:17",
   },
   {
-    type: "warning",
-    text: "Plant trees that provide shade to reduce sun exposure.",
+    type: "info",
+    text: "Seneste solnedgang: 22:20",
+  },
+  {
+    type: "info",
+    text: "Terrenget blokkerer 00:27 timer kveldssol i snitt pr dag",
+  },
+  {
+    type: "info",
+    text: "67 % skydekke gjennom året",
+  },
+  {
+    type: "savings",
+    text: "Potensielt 6900 kwh pr år med solcellepanel",
   },
 ];
 

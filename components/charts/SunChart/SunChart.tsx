@@ -76,7 +76,7 @@ export function SunChart() {
       >
         <CartesianGrid
           strokeDasharray="3 3"
-          stroke="var(--ui-2)"
+          stroke="var(--amber-7)"
         />
         <XAxis dataKey="name" />
         <Tooltip

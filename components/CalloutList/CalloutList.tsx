@@ -2,13 +2,14 @@ import { style } from "@/utils/client/style";
 import {
   ExclamationTriangleIcon,
   InfoCircledIcon,
+  RocketIcon,
 } from "@radix-ui/react-icons";
 import { Callout, Flex, IconProps } from "@radix-ui/themes";
 import cn from "classnames";
 import { ForwardRefExoticComponent, RefAttributes } from "react";
 import styles from "./CalloutList.module.css";
 
-type SuggestionType = "info" | "warning";
+export type SuggestionType = "info" | "warning" | "savings";
 type CalloutColor = Parameters<typeof Callout.Root>[0]["color"];
 
 export function CalloutList(props: {
@@ -61,9 +62,11 @@ const typeToIcon: Record<
 > = {
   info: InfoCircledIcon,
   warning: ExclamationTriangleIcon,
+  savings: RocketIcon,
 };
 
 const typeToColor: Record<SuggestionType, CalloutColor> = {
   info: "sky",
   warning: "amber",
+  savings: "green",
 };
