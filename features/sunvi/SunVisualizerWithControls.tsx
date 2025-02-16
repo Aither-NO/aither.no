@@ -138,6 +138,8 @@ function TimeSlider(props: {
             if (video) {
               const duration = video.duration;
               video.currentTime = (duration / 24) * newVal;
+            } else {
+              console.log("No video ref");
             }
           }}
           defaultValue={[12]}

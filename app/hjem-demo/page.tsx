@@ -17,9 +17,10 @@ export default function HjemDemo() {
   const [sunviOpen, setSunviOpen] = useState(false);
 
   return (
-    <Box p="5" style={{ background: "var(--amber-1)" }}>
+    <Box p="0" style={{ background: "var(--amber-1)" }}>
       <Box
         p="2"
+        px="0"
         mb="3"
         style={{
           background: `repeating-linear-gradient(
@@ -101,7 +102,7 @@ export default function HjemDemo() {
               <div style={{ minHeight: 500 }}>
                 <SunviFormProvider>
                   <SunviReport
-                    id="Baklengsveien 1"
+                    id="Solsvingen 1"
                     defaultExpanded
                     hideTopControls
                   />
