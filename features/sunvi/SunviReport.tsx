@@ -48,7 +48,7 @@ export function SunviReport(props: {
   return (
     <Flex direction={"column"} gap="5">
       <Heading size="5">
-        Sol rapport for <Text color="sky">{props.id}</Text>
+        Solrapport for <Text color="sky">{props.id}</Text>
       </Heading>
       <Flex
         direction={{
