@@ -1,6 +1,9 @@
 import { useMount } from "@/hooks/useMount";
 import { iOS } from "@/utils/client/platform";
-import { ColumnSpacingIcon } from "@radix-ui/react-icons";
+import {
+  AllSidesIcon,
+  ColumnSpacingIcon,
+} from "@radix-ui/react-icons";
 import {
   Button,
   Card,
@@ -23,6 +26,7 @@ export function SunVisualizerWithControls(props: {
   containerRef?: React.RefObject<HTMLDivElement>;
 }) {
   const form = useSunVisForm();
+  const containerRef = useRef<HTMLDivElement>(null);
   const ref = useRef<HTMLVideoElement>(null);
   const { angle, month, time } = form.getValues();
 
@@ -60,7 +64,12 @@ export function SunVisualizerWithControls(props: {
       size="1"
       ref={props.containerRef}
     >
-      <Flex direction={"column"} gap="0">
+      <Flex
+        direction={"column"}
+        gap="0"
+        ref={containerRef}
+        className={styles.fullscreenContainer}
+      >
         {!props.hideTopControls && (
           <Card variant="surface" size="1" className={cn()}>
             <Flex align="center" gap="2">
@@ -93,6 +102,24 @@ export function SunVisualizerWithControls(props: {
           </Card>
         )}
         <div className={styles.videoContainer}>
+          <Button
+            style={{ position: "absolute", top: -1, right: -1 }}
+            variant="surface"
+            radius="large"
+            color="gray"
+            size="2"
+            onClick={() => {
+              if (containerRef.current) {
+                if (document.fullscreenElement) {
+                  document.exitFullscreen();
+                } else {
+                  containerRef.current.requestFullscreen();
+                }
+              }
+            }}
+          >
+            <AllSidesIcon />
+          </Button>
           <video
             src={config.basePath + "/vid/fake-demo-2.mp4"}
             ref={ref}

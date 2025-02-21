@@ -1,7 +1,19 @@
 .videoContainer {
   position: relative;
+  overflow: hidden;
   & video {
     transition: all 0.3s;
+  }
+
+  & button {
+    transition: all 0.15s;
+    opacity: 0.2;
+    transform: scale(0.9);
+    z-index: 3;
+  }
+  &:hover button {
+    opacity: 1;
+    transform: scale(1);
   }
 
   &:hover,
@@ -14,4 +26,8 @@
       transform: translate(0px, 50px);
     }
   }
+}
+
+.fullscreenContainer:fullscreen {
+  padding: var(--space-7);
 }
