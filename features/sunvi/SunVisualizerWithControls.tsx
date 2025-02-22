@@ -120,7 +120,11 @@ export function SunVisualizerWithControls(props: {
                 if (fullscreenEnabled) {
                   document.exitFullscreen();
                 } else {
-                  screenfull.request(containerRef.current);
+                  if (iOS() && ref.current) {
+                    screenfull.request(ref.current);
+                  } else {
+                    screenfull.request(containerRef.current);
+                  }
                 }
               }
             }}
