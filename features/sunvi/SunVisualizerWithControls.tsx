@@ -71,7 +71,11 @@ export function SunVisualizerWithControls(props: {
         className={styles.fullscreenContainer}
       >
         {!props.hideTopControls && (
-          <Card variant="surface" size="1" className={cn()}>
+          <Card
+            variant="surface"
+            size="1"
+            className={cn(styles.topControls)}
+          >
             <Flex align="center" gap="2">
               <MonthSelect
                 value={month}

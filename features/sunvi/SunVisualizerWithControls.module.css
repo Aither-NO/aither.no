@@ -1,6 +1,7 @@
 .videoContainer {
   position: relative;
   overflow: hidden;
+  border-radius: var(--radius-4);
   & video {
     transition: all 0.3s;
   }
@@ -30,4 +31,12 @@
 
 .fullscreenContainer:fullscreen {
   padding: var(--space-7);
+}
+
+.topControls {
+  margin-bottom: var(--space-1);
+}
+
+.fullscreenContainer:fullscreen .topControls {
+  display: none;
 }
