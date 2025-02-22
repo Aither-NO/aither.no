@@ -15,6 +15,7 @@ import {
 } from "@radix-ui/themes";
 import cn from "classnames";
 import { ReactNode, useRef } from "react";
+import screenfull from "screenfull";
 import config from "../../next.config.mjs";
 import styles from "./SunVisualizerWithControls.module.css";
 import { useSunVisForm } from "./context";
@@ -113,11 +114,13 @@ export function SunVisualizerWithControls(props: {
             color="gray"
             size="2"
             onClick={() => {
-              if (containerRef.current) {
-                if (document.fullscreenElement) {
+              if (containerRef.current && screenfull.isEnabled) {
+                const fullscreenEnabled =
+                  screenfull.isFullscreen;
+                if (fullscreenEnabled) {
                   document.exitFullscreen();
                 } else {
-                  containerRef.current.requestFullscreen();
+                  screenfull.request(containerRef.current);
                 }
               }
             }}
