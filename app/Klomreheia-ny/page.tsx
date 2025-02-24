@@ -1,12 +1,9 @@
-"use client"
-import { useParams} from "next/navigation";
+"use client";
 import { useEffect } from "react";
 
-export default function KlomreheiaPage(){
-  const params = useParams<{ slug: string; }>();
-
+export default function KlomreheiaPage() {
   useEffect(() => {
-     window.location.href = `https://r1137465.website.cgtul6dky.service.one/Klomreheia-ny`;
-  }, [params.slug]);
+    window.location.href = `https://r1137465.website.cgtul6dky.service.one/Klomreheia-ny`;
+  }, []);
   return null;
-} 
+}

@@ -1,12 +1,9 @@
-"use client"
-import { useParams} from "next/navigation";
+"use client";
 import { useEffect } from "react";
 
-export default function SpikkeliaPage(){
-  const params = useParams<{ slug: string; }>();
-
+export default function SpikkeliaPage() {
   useEffect(() => {
-     window.location.href = `https://r1137465.website.cgtul6dky.service.one/Spikkelia`;
-  }, [params.slug]);
+    window.location.href = `https://r1137465.website.cgtul6dky.service.one/Spikkelia`;
+  }, []);
   return null;
-} 
+}
