@@ -1,12 +1,9 @@
-"use client"
-import { useParams} from "next/navigation";
+"use client";
 import { useEffect } from "react";
 
-export default function SangereidasenOrderPage(){
-  const params = useParams<{ slug: string; }>();
-
+export default function SangereidasenOrderPage() {
   useEffect(() => {
-     window.location.href = `https://r1137465.website.cgtul6dky.service.one/Order/sangereidåsen-8`;
-  }, [params.slug]);
+    window.location.href = `https://r1137465.website.cgtul6dky.service.one/Order/sangereidåsen-8`;
+  }, []);
   return null;
-} 
+}
