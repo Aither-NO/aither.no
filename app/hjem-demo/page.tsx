@@ -47,7 +47,7 @@ export default function HjemDemo() {
         <img
           src={
             config.basePath +
-            "/img/hjemdemo-" +
+            "/img/hjem2-" +
             (isSmall ? "sm" : "lg") +
             ".jpg"
           }
@@ -64,8 +64,8 @@ export default function HjemDemo() {
                   style={{
                     backgroundColor: "#fe8a5e",
                     position: "absolute",
-                    bottom: "48.5%",
-                    left: "3%",
+                    bottom: "42.5%",
+                    left: "1.5%",
                     minWidth: "22%",
                     height: "5.5%",
                     fontSize: "2vw",
@@ -81,8 +81,8 @@ export default function HjemDemo() {
                   style={{
                     backgroundColor: "#fe8a5e",
                     position: "absolute",
-                    bottom: "41%",
-                    left: "5%",
+                    bottom: "44%",
+                    left: "4%",
                     minWidth: "13%",
                     height: "4.4%",
                     fontSize: "1.5vw",

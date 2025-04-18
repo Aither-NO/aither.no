@@ -55,10 +55,10 @@ export default function FinnDemo() {
                 size="2"
                 style={{
                   position: "absolute",
-                  bottom: "40%",
-                  left: "4%",
-                  minWidth: "22%",
-                  height: "5.5%",
+                  bottom: "47%",
+                  left: "3.5%",
+                  minWidth: "18%",
+                  height: "4%",
                   fontSize: "2vw",
                   paddingInline: "2vw",
                 }}
@@ -71,8 +71,8 @@ export default function FinnDemo() {
                 size="1"
                 style={{
                   position: "absolute",
-                  bottom: "29%",
-                  left: "4%",
+                  bottom: "20%",
+                  left: "3.5%",
                   minWidth: "13%",
                   height: "4.4%",
                   fontSize: "1.5vw",
