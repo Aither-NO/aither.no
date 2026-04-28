@@ -49,7 +49,7 @@ export default function HjemDemo() {
             config.basePath +
             "/img/hjem2-" +
             (isSmall ? "sm" : "lg") +
-            ".jpg"
+            ".png"
           }
           alt="Demo bg"
           style={{ margin: "0 auto" }}

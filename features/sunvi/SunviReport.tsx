@@ -34,11 +34,12 @@ export function SunviReport(props: {
   id: string;
   defaultExpanded?: boolean;
   hideTopControls?: boolean;
+  src?: string;
 }) {
   const isClient = useIsClient();
   const isSmallScreen = useMediaQuery("(max-width: 1025px)");
   const [viewExpanded, setViewExpanded] = useState(
-    props.defaultExpanded ?? false
+    props.defaultExpanded ?? false,
   );
   const [ref, size] = useElementSize<HTMLDivElement>();
   const isHorizontalView = !isSmallScreen && !viewExpanded;
@@ -61,6 +62,7 @@ export function SunviReport(props: {
           viewExpanded={viewExpanded}
           setViewExpanded={setViewExpanded}
           containerRef={ref}
+          src={props.src}
           hideTopControls={props.hideTopControls}
         />
         <ScrollArea

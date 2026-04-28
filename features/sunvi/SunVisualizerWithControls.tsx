@@ -25,6 +25,7 @@ export function SunVisualizerWithControls(props: {
   setViewExpanded?: (expanded: boolean) => void;
   hideTopControls?: boolean;
   containerRef?: React.RefObject<HTMLDivElement>;
+  src?: string;
 }) {
   const form = useSunVisForm();
   const containerRef = useRef<HTMLDivElement>(null);
@@ -95,7 +96,7 @@ export function SunVisualizerWithControls(props: {
                     color="gray"
                     onClick={() => {
                       props.setViewExpanded!(
-                        !props.viewExpanded
+                        !props.viewExpanded,
                       );
                     }}
                   >
@@ -132,7 +133,10 @@ export function SunVisualizerWithControls(props: {
             <AllSidesIcon />
           </Button>
           <video
-            src={config.basePath + "/vid/fake-demo-2.mp4"}
+            src={
+              props.src ??
+              config.basePath + "/vid/fake-demo-2.mp4"
+            }
             ref={ref}
             style={{
               width: "100%",
